@@ -28,7 +28,7 @@ def login_post():
     fullname=""
     source=""
     client_id="client1"
-    client_secret="secret"
+    client_secret="s11ecret"
     grant_type="password"
     url="http://konnect.quadlabs.net/CareAPI/API/Login"
     data={'username':encodedUsername,'password':encodedPass,'fullname':fullname,'source':source,'client_id':client_id,'client_secret':client_secret,'grant_type':'password'}
