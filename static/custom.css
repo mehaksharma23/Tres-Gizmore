@@ -1,0 +1,159 @@
+.img-text {
+  background-image: url('img/semi-removebg-preview.png');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  /* height: 50px; */
+  /* width: 100px; */
+  background-size: contain;
+  padding: 10px 0px;
+  text-align: center;
+  color: #e79e05;
+}
+
+.img-text2 {
+  background-image: url('img/semi-removebg-preview.png');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  /* height: 50px; */
+  /* width: 100px; */
+  background-size: contain;
+  padding: 10px 0px;
+  text-align: center;
+  color: #82de6c;
+}
+
+.img-text3 {
+  background-image: url('img/semi-removebg-preview.png');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  /* height: 50px; */
+  /* width: 100px; */
+  background-size: contain;
+  padding: 10px 0px;
+  text-align: center;
+  color: #df4242;
+}
+
+.img-text4 {
+  background-image: url('img/semi-removebg-preview.png');
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  /* height: 50px; */
+  /* width: 100px; */
+  background-size: contain;
+  padding: 10px 0px;
+  text-align: center;
+  color: #82de6c;
+}
+
+.box1 {
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin-right: -2in;
+  background-color: #e79e05;
+  align-items: center;
+}
+
+.box2 {
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin-right: -2in;
+  background-color: #82de6c;
+  align-items: center;
+}
+
+.box3 {
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin-right: -2in;
+  background-color: #df4242;
+  align-items: center;
+}
+
+.box4 {
+  height: 130px;
+  width: 230px;
+  border-radius: 20px;
+  box-shadow: 3px 3px 10px rgba(0, 30, 87, 0.751);
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  cursor: pointer;
+  margin-right: -2in;
+  background-color: #82de6c;
+  align-items: center;
+}
+
+.box .semicircle {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  height: 60px;
+  width: 100px;
+  border-radius: 150px 150px 0 0;
+  background-color: white;
+}
+
+.box:hover {
+  transform: scale(1.08);
+}
+
+.icon{
+  font-size: 1.5em;
+}
+
+.gizmore-logo{
+  display: flex;
+  align-items: right;
+}
+
+.logo-image {
+  display: flex;
+  min-width: 55px;
+  margin-right: 1.7in;
+}
+
+.logo-image img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit:contain;
+}
+.vertical-menu {
+  
+  font-family: 'Rubik', sans-serif;
+  font-size: 20px;
+  
+}
+
+.box-text {
+  text-align: center;
+  font-size: medium;
+  margin-top: -10px;
+}
