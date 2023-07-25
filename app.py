@@ -22,7 +22,7 @@ conn = sqlite3.connect('database.db')
 
 
 class AccessToken(db.Model):
-    id=db.Column(db.Integer, primary_key=True)
+    id=db.Column(db.Integer, primary_key=True,)
     token=db.Column(db.String(255),nullable=False)
 
 @app.route('/',methods=["GET"])
@@ -52,7 +52,7 @@ def login_post():
 
         print(respData['access_token'])
         insertToken(respData['access_token'])
-        
+        session['response']=respData['access_token']
 
         return redirect('/home')
     else:
@@ -60,8 +60,10 @@ def login_post():
 
 @app.route('/home')
 def home():
-    return render_template('index.html')
+    if 'response' in session:
+        s=session['response']
+        return render_template('index.html')
+    return redirect('/login')
 
 if __name__=='__main__':
-    
     app.run(debug=True)
