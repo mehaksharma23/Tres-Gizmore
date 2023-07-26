@@ -43,10 +43,9 @@
   <!--Sidebar Start-->
   <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
-      <span class="logo-image">
-        <img src="static/logo.png" alt="logo_img" />
-      </span>
-
+      <svg>
+        <image xlink:href="static/logo-icon.svg" style=" height: 20px; width: 20px;">
+      </svg>
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
       <li class="nav-title">Home</li>
@@ -71,14 +70,10 @@
       <div class="container-fluid">
         <button class="header-toggler px-md-0 me-md-3" type="button"
           onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
-          <svg class="icon icon-lg">
-            <use xlink:href="vendors/@coreui/icons/svg/free.svg#cil-menu"></use>
+      </button>  
+          <svg>
+            <image xlink:href="static\logo-text.svg">
           </svg>
-        </button><a class="header-brand d-md-none" href="index.html">
-          <svg width="118" height="46" alt="CoreUI Logo">
-            <use xlink:href="assets/brand/coreui.svg#full"></use>
-          </svg></a>
-        <img class="gizmore-logo" src="static/Tres-logo.png" alt="Tres-Care">
         <ul class="header-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">
               <svg class="icon icon-lg">
