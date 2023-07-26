@@ -16,7 +16,7 @@ function plotMonthlyChart(columnData){
         const apiData=response.data;
         console.log(apiData);
         for(i in apiData){
-          let month=  (apiData[i].datecreated).getMonth();
+          let month = new Date(apiData[i].datecreated).getMonth();
            if(month===0){
             c1++;
            }
@@ -54,7 +54,7 @@ function plotMonthlyChart(columnData){
             c12++;
            }
         }
-        console.log("Total Android: "+ca);
+        //console.log("Total Android: "+ca);
         var ctx2 = document.getElementById('main-chart2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
             type: 'bar',
@@ -62,7 +62,7 @@ function plotMonthlyChart(columnData){
             data: {
                 labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
                 datasets: [{
-                    label: 'DeviceOS',
+                    label: 'Months',
                     data: [{x:0,y:c1},{x:1,y:c2},{x:2,y:c3},{x:3,y:c4},{x:4,y:c5},{x:5,y:c6},{x:6,y:c7},{x:7,y:c8},{x:8,y:c9},{x:9,y:c10},{x:10,y:c11},{x:11,y:c12}] ,
                     backgroundColor: [
                       'rgba(85,85,85, 1)'
