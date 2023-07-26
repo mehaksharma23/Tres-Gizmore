@@ -43,9 +43,13 @@
   <!--Sidebar Start-->
   <div class="sidebar sidebar-dark sidebar-fixed" id="sidebar">
     <div class="sidebar-brand d-none d-md-flex">
-      <svg>
-        <image xlink:href="static/logo-icon.svg" style=" height: 20px; width: 20px;">
-      </svg>
+
+      <div>
+        <svg class="sidebar-brand-full" style="height: 100px; width: 100px;">
+          <image xlink:href="static/logo-icon.svg" style="height: 100px;">
+        </image></svg>
+      </div>
+      
     </div>
     <ul class="sidebar-nav" data-coreui="navigation" data-simplebar="">
       <li class="nav-title">Home</li>
@@ -53,7 +57,6 @@
           <span class="nav-icon">
             <ion-icon name="person-outline"></ion-icon>
           </span>Dashboard</a></li>
-      <span class="badge badge-sm bg-info ms-auto">NEW</span></a></li>
       <li class="nav-item"><a class="nav-link" href="index.html" target="_top">
           <span class="nav-icon">
             <ion-icon name="mail-outline"></ion-icon></span>Email Notification</a></li>
@@ -71,9 +74,12 @@
         <button class="header-toggler px-md-0 me-md-3" type="button"
           onclick="coreui.Sidebar.getInstance(document.querySelector('#sidebar')).toggle()">
       </button>  
-          <svg>
-            <image xlink:href="static\logo-text.svg">
-          </svg>
+          <svg style="
+          width: 352px;
+          height: 45px;
+      " class="">
+                  <image xlink:href="static\logo-text.svg">
+                </image></svg>
         <ul class="header-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">
               <svg class="icon icon-lg">
@@ -166,7 +172,7 @@
                 <div class="box1">
                   <div class="text">
                     <div class="img-text">
-                      <h5>2312</h5>
+                      <h5></h5>
                     </div>
                     <h5 class="topic">Total No. of Users</h5>
                   </div>

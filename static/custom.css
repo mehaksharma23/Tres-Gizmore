@@ -120,7 +120,7 @@
   background-color: white;
 }
 
-.box:hover {
+.box.hover {
   transform: scale(1.08);
 }
 
