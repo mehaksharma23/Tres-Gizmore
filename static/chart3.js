@@ -1,4 +1,4 @@
-
+var dataArray=[];
 function plotWatchChart(columnData){
     let c1=0;
     let c2=0;
@@ -7,30 +7,34 @@ function plotWatchChart(columnData){
     let c5=0;
     let c6=0;
     let c7=0;
-    axios.get('http://127.0.0.1:8000/userinfo').then(response=> {
-        const apiData=response.data;
-        console.log(apiData);
-        for(i in apiData){
-           if(apiData[i].devicetype==='GizFit ULTRA'){
+    fetch('http://127.0.0.1:8000/userinfo').then(response=> response.json()).then(response=> {
+        response.forEach(item => {
+            const devicetype=item.devicetype;
+            dataArray.push(devicetype);
+        });
+       
+        console.log(dataArray);
+        for(i in dataArray){
+           if(dataArray[i]==='GizFit ULTRA'){
             c1++;
            }
-           else if(apiData[i].devicetype==='GizFit SLATE2'){
+           else if(dataArray[i]==='GizFit SLATE2'){
             c2++;
            }
-           else if(apiData[i].devicetype==='GizFit SLATE'){
+           else if(dataArray[i]==='GizFit SLATE'){
             c3++;
            }
-           else if(apiData[i].devicetype==='GizFit BLAZE'){
+           else if(dataArray[i]==='GizFit BLAZE'){
             c4++;
            }
-           else if(apiData[i].devicetype==='920 Glow Luxe'){
+           else if(dataArray[i]==='920 Glow Luxe'){
             c5++;
            }
-           else if(apiData[i].devicetype==='GizFit BLAZE MAX'){
+           else if(dataArray[i]==='GizFit BLAZE MAX'){
             c6++;
            }
-           else if(apiData[i].devicetype==='GizFit BLAZE X'){
-            C7++;
+           else if(dataArray[i]==='GizFit BLAZE X'){
+            c7++;
            }
         }
         //console.log("Total Android: "+ca);
