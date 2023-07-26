@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'corsheaders',
     'UserApp.apps.UserAppConfig',
+    'django_filters'
 ]
 CORS_ORIGIN_ALLOW_ALL=True
 

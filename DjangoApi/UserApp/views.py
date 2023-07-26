@@ -4,6 +4,10 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from UserApp.models import Userinfo
 from UserApp.serializers import userinfoserializer
+from rest_framework import generics
+from django_filters.rest_framework import DjangoFilterBackend
+from rest_framework.filters import OrderingFilter, SearchFilter
+
 
 
 
@@ -32,3 +36,15 @@ def UserinfoApi(request,id=0):
         user_info=Userinfo.objects.get(userid=id)
         Userinfo.delete()
         return JsonResponse("Deleted Succesfully",safe=False)
+    
+
+class userinfoView(generics.ListAPIView):
+    serializer_class=userinfoserializer
+    queryset=Userinfo.objects.all()
+    filter_backends=(DjangoFilterBackend, SearchFilter)
+    filter_fields=('uid','datecreated','deviceos','devicetype','isactive')
+    search_fields=('uid','datecreated','deviceos','devicetype','isactive')
+
+
+  
+    
