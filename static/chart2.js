@@ -60,7 +60,7 @@ function plotMonthlyChart(columnData){
             type: 'bar',
             
             data: {
-                labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],
+                labels: ['January','February','March','April','May','June','July','August','September','October','November','December'],   
                 datasets: [{
                     label: 'Months',
                     data: [{x:0,y:c1},{x:1,y:c2},{x:2,y:c3},{x:3,y:c4},{x:4,y:c5},{x:5,y:c6},{x:6,y:c7},{x:7,y:c8},{x:8,y:c9},{x:9,y:c10},{x:10,y:c11},{x:11,y:c12}] ,
