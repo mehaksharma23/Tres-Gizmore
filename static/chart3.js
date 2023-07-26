@@ -44,7 +44,14 @@ function plotWatchChart(columnData){
                     label: 'watches',
                     data: [{x:0,y:c1},{x:1,y:c2},{x:2,y:c3},{x:3,y:c4},{x:4,y:c5},{x:5,y:c6},{x:6,y:c7}] ,
                     backgroundColor: [
-                      'rgba(85,85,85, 1)'
+                        'rgba(255, 99, 132, 2)',
+                        'rgba(255, 159, 64, 2)',
+                        'rgba(255, 205, 86, 2)',
+                        'rgba(75, 192, 192, 2)',
+                        'rgba(54, 162, 235, 2)',
+                        'rgba(153, 102, 255, 2)',
+                        'rgba(201, 203, 207, 2)'
+      
       
                   ],
                     borderColor: 'rgb(75, 192, 192)',

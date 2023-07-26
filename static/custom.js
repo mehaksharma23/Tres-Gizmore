@@ -18,15 +18,16 @@ function plotOSChart(columnData){
         console.log("Total Android: "+ca);
         var ctx = document.getElementById('main-chart').getContext('2d');
         var myChart = new Chart(ctx, {
-            type: 'bar',
+            type: 'doughnut',
             
             data: {
                 labels: ['Android','iOS'],
                 datasets: [{
                     label: 'DeviceOS',
-                    data: [{x:0,y:ca},{x:1,y:ci}] ,
+                    data: [ca,ci] ,
                     backgroundColor: [
-                      'rgba(85,85,85, 1)'
+                      'rgba(255,99,132,2)',
+                      'rgba(255,205,86,2)'
       
                   ],
                     borderColor: 'rgb(75, 192, 192)',
