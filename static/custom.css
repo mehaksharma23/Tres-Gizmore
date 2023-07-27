@@ -130,7 +130,7 @@
 
 .gizmore-logo{
   display: flex;
-  align-items: right;
+  height: 32px;
 }
 
 .logo-image {
