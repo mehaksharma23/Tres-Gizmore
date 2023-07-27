@@ -54,6 +54,7 @@ function plotMonthlyChart(columnData){
             c12++;
            }
         }
+       
         //console.log("Total Android: "+ca);
         var ctx2 = document.getElementById('main-chart2').getContext('2d');
         var myChart2 = new Chart(ctx2, {
@@ -80,6 +81,18 @@ function plotMonthlyChart(columnData){
                 }]
               },
             options: {
+                scales: {
+                    x: {
+                        min: '2023-01-01',
+                        max: '2023-12-31',
+                        type: 'time',
+                        time: {
+                            unit: 'year'
+                        }
+                    }
+
+                },
+                
                 responsive: true
             }
         });
@@ -93,6 +106,15 @@ function plotMonthlyChart(columnData){
 
 
   
+}
+function filterChart(date){
+    console.log(date.value);
+    const year=date.value.substring(0,4);
+    const month=date.value.substring(5,7);
+    console.log(year)
+    const startDate=`$(date.value)-01`;
+    myChart2.options.scales.x.min=startDate;
+    myChart2.update();
 }
 document.addEventListener("DOMContentLoaded",plotMonthlyChart);
 
