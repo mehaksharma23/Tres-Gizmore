@@ -4,11 +4,12 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from DjangoApi.settings import DATABASES
 from UserApp.models import Userinfo
-from UserApp.serializers import userinfoserializer, Totaluserserializer
+from UserApp.serializers import userinfoserializer, lastactiveserializer
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django.db import connection
+import json
 
 cursor=connection.cursor()
 
@@ -45,11 +46,14 @@ def UserinfoApi(request,id=0):
 @csrf_exempt
 def SummaryAPI(request,id=0):
     if request.method=='GET':
-       row_count=Userinfo.objects.count()
+       row_count=Userinfo.objects.count ()
        data= {
            'row_count':row_count
        }
        return JsonResponse(data)
+    
+
+
 
 class userinfoView(generics.ListAPIView):
     serializer_class=userinfoserializer
