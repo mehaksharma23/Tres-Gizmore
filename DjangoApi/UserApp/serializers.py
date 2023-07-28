@@ -10,6 +10,7 @@ class userinfoserializer(serializers.ModelSerializer):
 class Totaluserserializer(serializers.ModelSerializer):
     class Meta:
        model=Userinfo
+       fields=('uid','datecreated')
        
 
        

@@ -45,30 +45,11 @@ def UserinfoApi(request,id=0):
 @csrf_exempt
 def SummaryAPI(request,id=0):
     if request.method=='GET':
-        cursor.execute("SELECT count(*) AS TotalRows FROM careatwork.userinfo")
-        row = cursor.fetchone()
-        Totaluser_serializer=Totaluserserializer(user_info,many=True)
-        return JsonResponse(Totaluser_serializer.data,safe=False)
-    elif request.method=='POST':
-        Userinfo_data=JSONParser().parse(request)
-        Userinfo_serializer=userinfoserializer(data=Userinfo_data)
-        if Userinfo_serializer.is_valid():
-            Userinfo_serializer.save()
-            return JsonResponse("Added Successfully",safe=False)
-        return JsonResponse("Failed to  Add",safe=False)
-    elif request.method=='PUT':
-        Userinfo_data=JSONParser().parse(request)
-        user_info=Userinfo.objects.get(userid=Userinfo_data['uid'])
-        Userinfo_serializer=userinfoserializer(user_info,data=Userinfo_data)
-        if Userinfo_serializer.is_valid():
-            Userinfo_serializer.save()
-            return JsonResponse("Update Successfully",safe=False)
-        return JsonResponse("Failed to Update")
-    elif request.method=='DELETE':
-        user_info=Userinfo.objects.get(userid=id)
-        Userinfo.delete()
-        return JsonResponse("Deleted Succesfully",safe=False)    
-   
+       row_count=Userinfo.objects.count()
+       data= {
+           'row_count':row_count
+       }
+       return JsonResponse(data)
 
 class userinfoView(generics.ListAPIView):
     serializer_class=userinfoserializer
