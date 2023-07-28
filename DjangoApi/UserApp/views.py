@@ -50,5 +50,14 @@ class userinfoView(generics.ListAPIView):
     search_fields=('uid','datecreated','deviceos','devicetype','isactive')
 
 
+from django.db import connection
+cursor = connection.cursor()
+def all_users(req):
+    try:
+        cursor.execute('call careatwork.Get_number_of_users')
+        result = cursor.fetchall()
+        return render(req, 'index.html', {'result': result})      
+    finally:
+        cursor.close()
   
     
