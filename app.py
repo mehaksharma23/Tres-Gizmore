@@ -65,5 +65,14 @@ def home():
         return render_template('index.html')
     return redirect('/login')
 
+@app.route('/email',methods=['GET','POST'])
+def email():
+    if 'response' in session:
+        s=session['response']
+        return render_template('email.html')
+    return redirect('/login')
+
+    
+
 if __name__=='__main__':
     app.run(debug=True)

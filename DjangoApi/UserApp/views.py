@@ -16,7 +16,11 @@ cursor=connection.cursor()
 @csrf_exempt
 def UserinfoApi(request,id=0):
     if request.method=='GET':
-        user_info=Userinfo.objects.all()
+        
+        start_date = request.GET.get('start_date', '')
+        end_date = request.GET.get('end_date','')
+        user_info = Userinfo.objects.filter(datecreated__range=(start_date, end_date))
+        print(start_date)
         Userinfo_serializer=userinfoserializer(user_info,many=True)
         return JsonResponse(Userinfo_serializer.data,safe=False)
     elif request.method=='POST':

@@ -1,10 +1,15 @@
 
 
-
-function plotOSChart(columnData){
+function plotOSChart(){
     let ca=0;
     let ci=0;
-    axios.get('http://127.0.0.1:8000/userinfo').then(response=> {
+    const start_date=document.getElementById('start_date');
+    const start_dateval=start_date.value;
+    const end_date=document.getElementById('end_date');
+    const end_dateval=end_date.value;
+    debugger;
+    const urlWithParams='http://127.0.0.1:8000/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
+    axios.get(urlWithParams).then(response=> {
         const apiData=response.data;
         console.log(apiData);
         for(i in apiData){
@@ -16,8 +21,12 @@ function plotOSChart(columnData){
            }
         }
         console.log("Total Android: "+ca);
-        var ctx = document.getElementById('main-chart').getContext('2d');
-        var myChart = new Chart(ctx, {
+
+        if(window.myChart instanceof Chart){
+            window.myChart.destroy();
+           }
+        var ctx = document.getElementById('mainChart').getContext('2d');
+        window.myChart = new Chart(ctx, {
             type: 'doughnut',
             
             data: {
@@ -26,8 +35,8 @@ function plotOSChart(columnData){
                     label: 'DeviceOS',
                     data: [ca,ci] ,
                     backgroundColor: [
-                      'rgba(255,99,132,2)',
-                      'rgba(255,205,86,2)'
+                      'rgba(153,156,164)',
+                      'rgba(49,49,49)'
       
                   ],
                     borderColor: 'rgb(75, 192, 192)',

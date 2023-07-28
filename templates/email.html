@@ -163,197 +163,35 @@
 
     <div class="body flex-grow-1 px-3">
       <div class="container-lg">
-        <div class="row">
-
-          <div class="col-sm-6 col-lg-3">
-            <div class="card mb-4 text-white bg-transparent border-0">
-              <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-
-                <div class="box1">
-                  <div class="text">
-                    <div class="img-text">
-                      <h5></h5>
-                    </div>
-                    <h5 class="topic">Total No. of Users</h5>
-                    <div>
-                      <h6 class="box-text">(Last 15 days)</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- /.col-->
-          <div class="col-sm-6 col-lg-3">
-            <div class="card mb-4 text-white bg-transparent border-0">
-              <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                <div class="box2">
-
-                  <div class="text">
-                    <div class="img-text2">
-                      <h5>1700</h5>
-                    </div>
-
-                    <h5 class="topic">Active Users</h5>
-                    <div>
-
-                      <h6 class="box-text">(Last 15 days)</h6>
-
-                    </div>
-
-                  </div>
-
-
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- /.col-->
-          <div class="col-sm-6 col-lg-3">
-            <div class="card mb-4 text-white bg-transparent border-0">
-              <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                <div class="box3">
-
-
-
-
-                  <div class="text">
-                    <div class="img-text3">
-                      <h5>135</h5>
-                    </div>
-
-                    <h5 class="topic">New Registrations</h5>
-                    <div>
-
-                      <h6 class="box-text">(Last 7 Days)</h6>
-                    </div>
-                  </div>
-
-
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- /.col-->
-          <div class="col-sm-6 col-lg-3">
-            <div class="card mb-4 text-white bg-transparent border-0">
-              <div class="card-body pb-0 d-flex justify-content-between align-items-start">
-                <div class="box4">
-
-                  <div class="text">
-
-
-                    <div class="img-text4">
-                      <h5>67</h5>
-                    </div>
-                    <h5 class="topic">Total No. of Users</h5>
-                    <div>
-
-                      <h6 class="box-text">(Last 15 Days)</h6>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </div>
-          <!-- /.col-->
-
-        </div>
+        
         <!-- /.row-->
         <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-4">
-            <label for="datePicker">Select a date:</label>
-          <input onchange="getStartDate()" type="date" id="start_date">
-          <input onchange="getEndDate()" type="date" id="end_date">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="card mb-4">
+                     
+              <div class="card-body">
+                <h1>Email</h1>
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                    <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">Example textarea</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+              </div>
+             
+
+            </div>
           </div>
+        
+          
+
+          </div>
+          <button type="button" class="btn btn-secondary">Send</button>
+
         </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h4 class="card-title mb-0">Device Types</h4>
-                    <div class="small text-medium-emphasis">January - July 2022</div>
-                  </div>
-                  
-                </div>
-                <div class="c-chart-wrapper" style="height:300px;margin-top: 40px;text-align: -webkit-center;">
-                  <canvas class="chart" id="mainChart" height="300" width="300"
-                    style="display: block;box-sizing: border-box;height: 300px;width: 300px;"></canvas>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h4 class="card-title mb-0">Watches</h4>
-                    <div class="small text-medium-emphasis">January - July 2022</div>
-                  </div>
-                  
-                </div>
-                <div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
-                  <canvas class="chart" id="mainChart3" height="100"></canvas>
-                </div>
-
-
-              </div>
-            </div>
-
-
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h4 class="card-title mb-0">Monthly Registrations</h4>
-                    <div class="small text-medium-emphasis">January - July 2022</div>
-                  </div>
-                  
-                </div>
-                <div class="c-chart-wrapper" style="height:300px;margin-top:40px; text-align: -webkit-center;">
-                  <canvas class="chart" id="mainChart2" height="100"></canvas>
-                  
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-12 col-lg-6">
-            <div class="card mb-4">
-              <div class="card-body">
-                <div class="d-flex justify-content-between">
-                  <div>
-                    <h4 class="card-title mb-0">Gender Ratio</h4>
-                    <div class="small text-medium-emphasis">January - July 2022</div>
-                  </div>
-                 
-                </div>
-                <div class="c-chart-wrapper" style="height:300px;margin-top: 40px;text-align: -webkit-center;">
-                  <canvas class="chart" id="mainChart4" height="300" width="300" style="display: block;box-sizing: border-box;height: 300px;width: 300px;"></canvas>
-                 
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
+       
       </div>
 
     </div>
@@ -364,7 +202,6 @@
   <script src="static/vendors/@coreui/coreui/js/coreui.bundle.min.js"></script>
   <script src="static/vendors/simplebar/js/simplebar.min.js"></script>
   <!-- Plugins and scripts required by this view-->
-  <srcipt src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
   <script src="static/vendors/chart.js/js/chart.min.js"></script>
   <script src="static/vendors/@coreui/chartjs/js/coreui-chartjs.js"></script>
   <script src="static/vendors/@coreui/utils/js/coreui-utils.js"></script>
