@@ -7,5 +7,9 @@ class userinfoserializer(serializers.ModelSerializer):
        model=Userinfo
        fields=('uid','datecreated','deviceos','devicetype','isactive')
        
+class Totaluserserializer(serializers.ModelSerializer):
+    class Meta:
+       model=Userinfo
+       
 
        

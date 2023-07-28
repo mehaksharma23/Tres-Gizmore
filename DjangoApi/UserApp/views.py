@@ -4,7 +4,7 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from DjangoApi.settings import DATABASES
 from UserApp.models import Userinfo
-from UserApp.serializers import userinfoserializer
+from UserApp.serializers import userinfoserializer, Totaluserserializer
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
@@ -16,7 +16,6 @@ cursor=connection.cursor()
 @csrf_exempt
 def UserinfoApi(request,id=0):
     if request.method=='GET':
-        
         start_date = request.GET.get('start_date', '')
         end_date = request.GET.get('end_date','')
         user_info = Userinfo.objects.filter(datecreated__range=(start_date, end_date))
@@ -48,7 +47,8 @@ def SummaryAPI(request,id=0):
     if request.method=='GET':
         cursor.execute("SELECT count(*) AS TotalRows FROM careatwork.userinfo")
         row = cursor.fetchone()
-        return JsonResponse('Here are the total number of users', row, safe=False)
+        Totaluser_serializer=Totaluserserializer(user_info,many=True)
+        return JsonResponse(Totaluser_serializer.data,safe=False)
     elif request.method=='POST':
         Userinfo_data=JSONParser().parse(request)
         Userinfo_serializer=userinfoserializer(data=Userinfo_data)
