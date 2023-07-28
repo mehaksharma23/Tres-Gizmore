@@ -50,6 +50,16 @@ def SummaryAPI(request,id=0):
            'row_count':row_count
        }
        return JsonResponse(data)
+    
+@csrf_exempt
+def InactiveUserAPI(request,id=0):
+    if request.method=='GET':
+       inactive_user=Userinfo.objects.filter(isactive=False)
+       data= {
+           'inactive_user':inactive_user
+       }
+       return JsonResponse(data)
+
 
 class userinfoView(generics.ListAPIView):
     serializer_class=userinfoserializer
