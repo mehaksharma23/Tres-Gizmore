@@ -11,6 +11,12 @@ class Totaluserserializer(serializers.ModelSerializer):
     class Meta:
        model=Userinfo
        fields=('uid','datecreated')
+
+class lastactiveserializer(serializers.ModelSerializer):
+    class Meta:
+       model=Userinfo
+       fields=('isactive','datecreated')
+
        
 
        
