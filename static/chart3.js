@@ -7,7 +7,13 @@ function plotWatchChart(columnData){
     let c5=0;
     let c6=0;
     let c7=0;
-    fetch('http://127.0.0.1:8000/userinfo').then(response=> response.json()).then(response=> {
+
+    const start_date=document.getElementById('start_date');
+    const start_dateval=start_date.value;
+    const end_date=document.getElementById('end_date');
+    const end_dateval=end_date.value;
+    const urlWithParams='http://127.0.0.1:8000/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
+    fetch(urlWithParams).then(response=> response.json()).then(response=> {
         response.forEach(item => {
             const devicetype=item.devicetype;
             dataArray.push(devicetype);
@@ -38,8 +44,12 @@ function plotWatchChart(columnData){
            }
         }
         //console.log("Total Android: "+ca);
-        var ctx3= document.getElementById('main-chart3').getContext('2d');
-        var myChart3 = new Chart(ctx3, {
+
+        if(window.mainChart3 instanceof Chart){
+            window.mainChart3.destroy();
+           }
+        var ctx3= document.getElementById('mainChart3').getContext('2d');
+        window.myChart3 = new Chart(ctx3, {
             type: 'bar',
             
             data: {
