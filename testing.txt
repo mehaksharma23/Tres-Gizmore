@@ -8,4 +8,9 @@ def all_users(req):
     finally:
         cursor.close()
   
+def lastactivedaysAPI(self):
+        cursor.execute("select count(*) AS TotalRows from careatwork.userinfo WHERE isactive=1 AND datecreated > current_date - interval 15 day")
+        row = cursor.fetchall()
+        lastactive_serializer=lastactiveserializer(row,many=True)
+        return JsonResponse(lastactive_serializer.data,safe=False)       
     

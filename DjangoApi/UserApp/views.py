@@ -49,7 +49,7 @@ def UserinfoApi(request,id=0):
 @csrf_exempt
 def SummaryAPI(request,id=0):
     if request.method=='GET':
-       row_count=Userinfo.objects.count()
+       row_count=Userinfo.objects.count ()
        data= {
            'row_count':row_count
        }
