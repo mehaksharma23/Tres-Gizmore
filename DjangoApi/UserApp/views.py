@@ -11,6 +11,8 @@ from rest_framework.filters import OrderingFilter, SearchFilter
 from django.db import connection
 import datetime
 import pandas as pd 
+from datetime import timedelta
+from django.utils import timezone
 
 cursor=connection.cursor()
 
@@ -75,8 +77,7 @@ def ActiveUserAPI(request,id=0):
     
 @csrf_exempt
 def NewUserAPI(request,id=0):
-    from datetime import timedelta
-    from django.utils import timezone
+  
     
 
 
