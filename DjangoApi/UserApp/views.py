@@ -65,6 +65,7 @@ def InactiveUserAPI(request,id=0):
     
 @csrf_exempt
 def ActiveUserAPI(request,id=0):
+    
     if request.method=='GET':
        active_user=Userinfo.objects.filter(isactive=True).count()
       

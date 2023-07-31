@@ -45,8 +45,8 @@ function plotWatchChart(columnData){
         }
         //console.log("Total Android: "+ca);
 
-        if(window.mainChart3 instanceof Chart){
-            window.mainChart3.destroy();
+        if(window.myChart3 instanceof Chart){
+            window.myChart3.destroy();
            }
         var ctx3= document.getElementById('mainChart3').getContext('2d');
         window.myChart3 = new Chart(ctx3, {

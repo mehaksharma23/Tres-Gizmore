@@ -1,3 +1,18 @@
+var currentDate=new Date();
+var defaultStartDate=formatDate(currentDate);
+var defaultEndDate=new Date(currentDate);
+defaultEndDate.setDate(defaultEndDate.getDate()+7);
+defaultEndDate=formatDate(defaultEndDate);
+document.getElementById("start_date").value=defaultStartDate;
+document.getElementById("end_date").value=defaultEndDate;
+function formatDate(date){
+    var year=date.getFullYear();
+    var month=("0" + (date.getMonth()+1)).slice(-2);
+    var day=("0" + date.getDate()).slice(-2);
+    return year + "-" + month + "-" + day;
+}
+
+
 window.onload=function(){
     countRows();
     active();
