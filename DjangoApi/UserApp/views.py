@@ -9,9 +9,8 @@ from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django.db import connection
-import datetime
 import pandas as pd 
-from datetime import timedelta
+from datetime import timedelta, date 
 from django.utils import timezone
 
 cursor=connection.cursor()
