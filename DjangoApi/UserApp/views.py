@@ -4,12 +4,13 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from DjangoApi.settings import DATABASES
 from UserApp.models import Userinfo
-from UserApp.serializers import userinfoserializer, lastactiveserializer
+from UserApp.serializers import userinfoserializer, Totaluserserializer,Inactiveuserserializer,Activeuserserializer,Newuserserializer
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django.db import connection
-import json
+import datetime
+import pandas as pd 
 
 cursor=connection.cursor()
 
@@ -19,7 +20,7 @@ def UserinfoApi(request,id=0):
     if request.method=='GET':
         start_date = request.GET.get('start_date', '')
         end_date = request.GET.get('end_date','')
-        user_info = Userinfo.objects.filter(datecreated__range=(start_date, end_date))
+        user_info = Userinfo.objects.filter(datecreated__range=(date.today()))
         print(start_date)
         Userinfo_serializer=userinfoserializer(user_info,many=True)
         return JsonResponse(Userinfo_serializer.data,safe=False)
@@ -52,7 +53,44 @@ def SummaryAPI(request,id=0):
        }
        return JsonResponse(data)
     
+@csrf_exempt
+def InactiveUserAPI(request,id=0):
+    if request.method=='GET':
+       inactive_user=Userinfo.objects.filter(isactive=False).count()
+      
+       data= {
+           'inactive_user':inactive_user
+       }
+       return JsonResponse(data)
+    
+@csrf_exempt
+def ActiveUserAPI(request,id=0):
+    if request.method=='GET':
+       active_user=Userinfo.objects.filter(isactive=True).count()
+      
+       data= {
+           'active_user':active_user
+       }
+       return JsonResponse(data)    
+    
+@csrf_exempt
+def NewUserAPI(request,id=0):
+    from datetime import timedelta
+    from django.utils import timezone
+    
 
+
+    if request.method=='GET':
+       end_date=timezone.now()
+       start_date=end_date-timedelta(days=7)
+
+       new_user=Userinfo.objects.filter(datecreated__range=[start_date,end_date]).count()
+      
+       data= {
+           'new_user':new_user
+       }
+       return JsonResponse(data)    
+   
 
 
 class userinfoView(generics.ListAPIView):
