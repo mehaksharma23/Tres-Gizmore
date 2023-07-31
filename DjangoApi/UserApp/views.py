@@ -4,14 +4,13 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from DjangoApi.settings import DATABASES
 from UserApp.models import Userinfo
-from UserApp.serializers import userinfoserializer, Totaluserserializer,Inactiveuserserializer,Activeuserserializer,Newuserserializer
+from UserApp.serializers import userinfoserializer, Totaluserserializer,Inactiveuserserializer,Activeuserserializer
 from rest_framework import generics
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.filters import OrderingFilter, SearchFilter
 from django.db import connection
+import datetime
 import pandas as pd 
-from datetime import timedelta, date 
-from django.utils import timezone
 
 cursor=connection.cursor()
 
@@ -21,7 +20,7 @@ def UserinfoApi(request,id=0):
     if request.method=='GET':
         start_date = request.GET.get('start_date', '')
         end_date = request.GET.get('end_date','')
-        user_info = Userinfo.objects.filter(datecreated__range=(date.today()))
+        user_info = Userinfo.objects.filter(datecreated__range=[start_date,end_date])
         print(start_date)
         Userinfo_serializer=userinfoserializer(user_info,many=True)
         return JsonResponse(Userinfo_serializer.data,safe=False)
@@ -48,7 +47,7 @@ def UserinfoApi(request,id=0):
 @csrf_exempt
 def SummaryAPI(request,id=0):
     if request.method=='GET':
-       row_count=Userinfo.objects.count ()
+       row_count=Userinfo.objects.count()
        data= {
            'row_count':row_count
        }
@@ -76,7 +75,8 @@ def ActiveUserAPI(request,id=0):
     
 @csrf_exempt
 def NewUserAPI(request,id=0):
-  
+    from datetime import timedelta
+    from django.utils import timezone
     
 
 
