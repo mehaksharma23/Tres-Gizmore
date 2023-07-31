@@ -1,8 +1,8 @@
 var currentDate=new Date();
-var defaultStartDate=formatDate(currentDate);
-var defaultEndDate=new Date(currentDate);
-defaultEndDate.setDate(defaultEndDate.getDate()+7);
-defaultEndDate=formatDate(defaultEndDate);
+var defaultEndDate=formatDate(currentDate);
+var defaultStartDate=new Date(currentDate);
+defaultStartDate.setDate(defaultStartDate.getDate()-7);
+defaultStartDate=formatDate(defaultStartDate);
 document.getElementById("start_date").value=defaultStartDate;
 document.getElementById("end_date").value=defaultEndDate;
 function formatDate(date){
