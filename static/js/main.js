@@ -9,7 +9,7 @@
 
 // Disable the on-canvas tooltip
 
-var url = "http://preproduction-k:5001";
+var url = "http://127.0.0.1:8000";
 Chart.defaults.pointHitDetectionRadius = 1;
 Chart.defaults.plugins.tooltip.enabled = false;
 Chart.defaults.plugins.tooltip.mode = 'index';
