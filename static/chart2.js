@@ -23,7 +23,6 @@ function getEndDate(){
   
     return end_dateval;
 }
-
 function plotMonthlyChart() {
     let c1 = 0;
     let c2 = 0;
@@ -43,7 +42,7 @@ function plotMonthlyChart() {
     const end_dateval=end_date.value;
     debugger;
   
-    const urlWithParams='http://preproduction-k:5001/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
+    const urlWithParams=url+'/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
     axios.get(urlWithParams).then(response => {
         const apiData = response.data;
         console.log(apiData);

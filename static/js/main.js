@@ -8,6 +8,8 @@
  */
 
 // Disable the on-canvas tooltip
+
+var url = "http://preproduction-k:5001";
 Chart.defaults.pointHitDetectionRadius = 1;
 Chart.defaults.plugins.tooltip.enabled = false;
 Chart.defaults.plugins.tooltip.mode = 'index';
