@@ -118,7 +118,11 @@ function plotMonthlyChart() {
                 }]
             },
             options: {
-                
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                },
                 
                 responsive: true
             }

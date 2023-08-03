@@ -55,7 +55,7 @@ function plotWatchChart(columnData){
             data: {
                 labels: ['GizFit ULTRA','GizFit SLATE2','GizFit SLATE','GizFit BLAZE','920 Glow Luxe','GizFit BLAZE MAX','GizFit BLAZE X'],
                 datasets: [{
-                    label: 'watches',
+                    label: '',
                     data: [{x:0,y:c1},{x:1,y:c2},{x:2,y:c3},{x:3,y:c4},{x:4,y:c5},{x:5,y:c6},{x:6,y:c7}] ,
                     backgroundColor: [
                         'rgba(255, 99, 132, 2)',
@@ -74,7 +74,13 @@ function plotWatchChart(columnData){
                 }]
               },
             options: {
-                responsive: true
+                
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: false
+                    }
+                }
             }
         });
     })
