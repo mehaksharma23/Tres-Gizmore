@@ -22,7 +22,7 @@ window.onload=function(){
 
 function countRows(){
     let users=0;
-    const urlWithParams='http://127.0.0.1:8000/summary';
+    const urlWithParams='http://preproduction-k:5001/summary';
     axios.get(urlWithParams).then(response => {
         const apiData = response.data;
         console.log(apiData);
@@ -33,7 +33,7 @@ function countRows(){
 
 function active(){
     let users=0;
-    const urlWithParams='http://127.0.0.1:8000/active';
+    const urlWithParams='http://preproduction-k:5001/active';
     axios.get(urlWithParams).then(response => {
         const apiData = response.data;
         console.log(apiData);
@@ -44,7 +44,7 @@ function active(){
 
 function inactive(){
     let users=0;
-    const urlWithParams='http://127.0.0.1:8000/inactive';
+    const urlWithParams='http://preproduction-k:5001/inactive';
     axios.get(urlWithParams).then(response => {
         const apiData = response.data;
         console.log(apiData);
@@ -55,7 +55,7 @@ function inactive(){
 
 function newUsers(){
     let users=0;
-    const urlWithParams='http://127.0.0.1:8000/new';
+    const urlWithParams='http://preproduction-k:5001/new';
     axios.get(urlWithParams).then(response => {
         const apiData=response.data;
         console.log(apiData);

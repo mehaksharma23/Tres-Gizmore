@@ -12,7 +12,7 @@ function plotWatchChart(columnData){
     const start_dateval=start_date.value;
     const end_date=document.getElementById('end_date');
     const end_dateval=end_date.value;
-    const urlWithParams='http://127.0.0.1:8000/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
+    const urlWithParams='http://preproduction-k:5001/userinfo?start_date='+start_dateval+'&end_date='+end_dateval;
     fetch(urlWithParams).then(response=> response.json()).then(response=> {
         response.forEach(item => {
             const devicetype=item.devicetype;
